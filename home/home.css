@@ -1,0 +1,114 @@
+/* overlay text top image */
+.full-screen-image {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.centered-text {
+    position: absolute;
+    top: calc(25% + 50px); /* Move down 30px more (total 50px) */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Butler', serif; /* Change font to Butler */
+    font-size: 6rem; /* 2x bigger */
+    color: #f8f8f8; /* Off-white color */
+    text-align: center;
+    letter-spacing: 0.2em; /* Double spacing between letters */
+    font-weight: 200; /* Confirm ultra light weight */
+    width: 90%;
+}
+
+.subtext {
+    position: absolute;
+    top: calc(25% + 140px); /* Add 20px more space (total 140px) */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem; /* Smaller font size */
+    color: #f8f8f8; /* Off-white color */
+    text-align: center;
+    letter-spacing: 0.5em; /* Spacing to stretch the text */
+    width: 100%; /* Ensure it stretches the same width */
+    font-style: italic; /* Make the text italic */
+}
+
+/* navigation bar */
+.nav-bar {
+    position: fixed; /* Make the nav-bar sticky */
+    top: 50%; /* Start in the center of the photo */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%);
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    color: #f8f8f8; /* Off-white color */
+    text-align: center;
+    letter-spacing: 0.3em; /* Elegant spacing between letters */
+    white-space: nowrap; /* Prevent wrapping */
+    transition: all 0.3s ease; /* Smooth transition for size and position */
+}
+
+.nav-bar.scrolled {
+    top: 0; /* Stick to the top of the page */
+    left: 0; /* Align to the left edge */
+    right: 0; /* Ensure it stretches to the right edge */
+    transform: none; /* Remove translation */
+    font-size: 2rem; /* Increase font size */
+    padding: 10px 0; /* Add padding for better visibility */
+    background-color: rgba(255, 255, 255, 0.2); /* Add semi-transparent white background */
+    width: 100vw; /* Stretch across the entire screen */
+    z-index: 1000; /* Ensure it stays on top */
+}
+
+.nav-bar span {
+    display: inline-block; /* Ensure each word is treated individually */
+    transition: transform 0.3s ease, letter-spacing 0.3s ease; /* Smooth scaling and spacing effect */
+    position: relative;
+    letter-spacing: 0.2em; /* Add spacing between letters */
+}
+
+.nav-bar span:hover {
+    transform: scale(1.25); /* Reduce scaling to half the current size */
+    letter-spacing: 0.3em; /* Adjust spacing to match the reduced size */
+}
+
+.nav-bar span:hover::before {
+    content: none; /* Disable the transparent box */
+}
+
+.nav-bar a {
+    color: white;
+    text-decoration: none;
+    display: inline-block; /* Ensure scaling works properly */
+    margin: 0 15px; /* Add spacing between items */
+    transition: transform 0.3s ease, letter-spacing 0.3s ease;
+    transform-origin: center; /* Ensure scaling is centered */
+}
+
+.nav-bar a:hover {
+    transform: scale(1.25); /* Make the hovered word bigger, centered */
+    letter-spacing: 0.3em; /* Adjust spacing to match the scaling */
+    text-decoration: none; /* Ensure no underline appears on hover */
+}
+
+/* Everything below image */
+.photo-gallery {
+    position: absolute;
+    top: calc(100vh + 30px); /* Keep the vertical position as is */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust for horizontal centering */
+    font-family: 'Butler', serif; /* Use Butler font */
+    font-size: 6rem; /* Match the size of "Rein It In" */
+    color: #003366; /* Deep blue */
+    font-style: italic; /* Italicize the text */
+    font-weight: 200; /* Ultra light weight */
+}
+
+
+
+
+
+
